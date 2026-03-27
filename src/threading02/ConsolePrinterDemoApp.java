@@ -8,8 +8,14 @@ public class ConsolePrinterDemoApp {
         ConsolePrinter cpA = new ConsolePrinter("A");
         ConsolePrinter cpB = new ConsolePrinter("B");
 
+        Thread thCpA = new Thread(cpA);
+        Thread thCpB = new Thread(cpB);
 
+        thCpA.start();
+        thCpB.start();
 
+        thCpA.join();
+        thCpB.join();
 
 
     }

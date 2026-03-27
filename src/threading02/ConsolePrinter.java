@@ -1,6 +1,6 @@
 package threading02;
 
-public class ConsolePrinter  {
+public class ConsolePrinter implements Runnable  {
 
 
     private String identifier;
@@ -15,5 +15,10 @@ public class ConsolePrinter  {
 
 
         }
+    }
+
+    @Override
+    public void run() {
+        logic();
     }
 }

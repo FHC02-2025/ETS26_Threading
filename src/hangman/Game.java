@@ -8,8 +8,13 @@ public class Game {
     private char[] foundWord;
     private int counter;
 
+    public int getLength() {
+        return foundWord.length;
+    }
+
     public Game() {
         loadWord();
+        counter = 0;
     }
 
     public void loadWord() {
@@ -25,12 +30,9 @@ public class Game {
                 foundWord[i] = '_';
             }
 
-
         } catch (DataFileException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     public String tryCharacter(char c) {
@@ -54,7 +56,8 @@ public class Game {
                return false;
            }
         }
+
+        loadWord();
         return true;
     }
-
 }

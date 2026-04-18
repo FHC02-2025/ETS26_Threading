@@ -14,5 +14,18 @@ public class DemoLoadApp {
 
         System.out.println("list = " + list);
         
+        // Testing von Game
+        
+        Game hangman = new Game();
+        System.out.println("hangman.tryCharacter('s') = " + hangman.tryCharacter('s'));
+        System.out.println("hangman.tryCharacter('p') = " + hangman.tryCharacter('p'));
+        System.out.println("hangman.tryCharacter('l') = " + hangman.tryCharacter('l'));
+        System.out.println("hangman.tryCharacter('i') = " + hangman.tryCharacter('i'));
+
+        System.out.println("hangman.isFinished() = " + hangman.isFinished());
+
+        System.out.println("hangman.tryCharacter('S') = " + hangman.tryCharacter('S'));
+        System.out.println("hangman.tryCharacter('e') = " + hangman.tryCharacter('e'));
+        System.out.println("hangman.isFinished() = " + hangman.isFinished());
     }
 }

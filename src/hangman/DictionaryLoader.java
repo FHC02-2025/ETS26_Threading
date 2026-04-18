@@ -11,7 +11,8 @@ public class DictionaryLoader {
     public ArrayList<String> load() throws DataFileException {
 
         ArrayList<String> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(".\\data\\dictionary.txt"))) {
+        try (BufferedReader br =
+                     new BufferedReader(new FileReader(".\\data\\dictionary.txt"))) {
 
             String line = "";
             while ((line = br.readLine()) != null){

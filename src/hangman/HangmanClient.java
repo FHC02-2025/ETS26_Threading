@@ -47,7 +47,6 @@ public class HangmanClient implements Runnable {
 
                         bw.write("Neues Spiel gestartet, " + game.getLength() + " Zeichen zu suchen");
                         bw.newLine();
-
                     }
                 }
                 else {

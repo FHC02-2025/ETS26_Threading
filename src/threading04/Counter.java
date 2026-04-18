@@ -3,6 +3,7 @@ package threading04;
 public class Counter implements Runnable {
 
     public static int Counter = 0;
+    private static String key = "asdf";
 
     @Override
     public void run() {
@@ -11,8 +12,11 @@ public class Counter implements Runnable {
         }
     }
 
-    //synchronized (this)
-    private void increase() {
-        Counter = Counter + 1;
+    public void increase() {
+
+        //warten
+        synchronized (key) {
+            Counter = Counter + 1;
+        }
     }
 }

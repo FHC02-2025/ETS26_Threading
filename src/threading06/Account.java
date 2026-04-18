@@ -5,7 +5,6 @@ public class Account {
 	private String accountHolder;
 	
 	public Account(double amount, String accountHolder) {
-		super();
 		this.amount = amount;
 		this.accountHolder = accountHolder;
 	}

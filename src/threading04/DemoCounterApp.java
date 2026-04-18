@@ -9,10 +9,8 @@ public class DemoCounterApp {
         Thread th1 = new Thread(counter1);
         Thread th2 = new Thread(counter2);
 
-
         th1.start();
         th2.start();
-
 
         th1.join();
         th2.join();

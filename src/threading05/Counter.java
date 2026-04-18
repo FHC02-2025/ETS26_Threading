@@ -18,7 +18,16 @@ public class Counter implements Runnable {
 
     private static Lock lock = new ReentrantLock();
     private void increase() {
-        Counter++;
+
+        try {
+            if (lock.tryLock(100, TimeUnit.MILLISECONDS))
+            {
+                Counter++;
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 }

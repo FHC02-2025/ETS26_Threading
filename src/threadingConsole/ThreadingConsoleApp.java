@@ -9,23 +9,22 @@ public class ThreadingConsoleApp {
 
         Thread th = new Thread(backgroundWorker);
         th.start();
-        //backgroundWorker.run(); ACHTUNG: Startet keinen Thread
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
         try {
             // Warten auf ein Zeichen
+            System.out.println("Warte auf Eingabe");
             System.in.read();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         // Zeichen eingelesen
-        backgroundWorker.setShouldRun(false);
+
+        System.out.println("Eingabe erfolgt, Abbruch, Warten auf Ende....");
         try {
+            //th.stop();
+            backgroundWorker.setShouldRun(false);
             th.join();
+            System.out.println("Thread gestoppt");
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
